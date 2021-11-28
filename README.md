@@ -81,16 +81,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 │   ├── index.html	主页面:整个项目永远只有一个html文件
 │   ├── logo192.png	  
 │   ├── logo512.png
-│   ├── manifest.json
-│   └── robots.txt
+│   ├── manifest.json 应用加壳后写配置文件
+│   └── robots.txt 	爬虫的规则文件
 ├── src
 │   ├── App.css
-│   ├── App.js
+│   ├── App.js  包含一个函数式组件+ 用es6语法外包出去. 以后就是把整个APP放入root节点
 │   ├── App.test.js
-│   ├── index.css
-│   ├── index.js
+│   ├── index.css 存放一些通用的样式
+│   ├── index.js 入口文件
 │   ├── logo.svg
-│   ├── reportWebVitals.js
-│   └── setupTests.js
+│   ├── reportWebVitals.js  用于记录页面性能(目前了解即可)
+│   └── setupTests.js  用于做组件测试的
 └── yarn.lock
 ```
