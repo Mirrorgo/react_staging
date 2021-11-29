@@ -74,7 +74,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ```
 .
 ├── README.md
-├── package.json
+├── package.json 包的说明文件
 ├── node_modules >* 包含各种包
 ├── public
 │   ├── favicon.ico  图标请用.ico格式
