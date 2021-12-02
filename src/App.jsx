@@ -9,8 +9,17 @@ export default class App extends Component {
     todos: [
       { id: "001", name: "吃饭", done: true },
       { id: "002", name: "睡觉", done: true },
-      { id: "003", name: "打代码", done: true },
+      { id: "003", name: "打代码", done: false },
     ],
+  };
+
+  // addTodo用于添加一个todo,接受的参数是todo对象
+  addTodo = (todoObj) => {
+    const { todos } = this.state;
+    //追加一个todo
+    const newTodo = [todoObj, ...todos];
+    // 更新状态
+    this.setState({ todos: newTodo });
   };
 
   render() {
@@ -18,7 +27,7 @@ export default class App extends Component {
     return (
       <div className="todo-container">
         <div className="todo-wrap">
-          <Header a={1}></Header>
+          <Header addTodo={this.addTodo}></Header>
           <List todos={todos}></List>
           <Footer></Footer>
         </div>
