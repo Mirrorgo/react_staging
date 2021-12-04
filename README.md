@@ -1,3 +1,10 @@
+# My All TODO
+TODO
+DONE
+FIXME
+BUG
+NOTE
+STAR
 # 以已有页面为基础拆分组件并加入React框架
 
 * 拆分组件,拆分界面,抽取组件
@@ -26,6 +33,7 @@
 
 # 注意defaultChecked和checked的区别
 # 状态在哪,操作状态的方法就在哪
+仅仅是增删改查的标准?
 
 [开始讲一个:hover直接就能解决的悬浮高亮](https://www.bilibili.com/video/BV1wy4y1D7JT?p=59&t=133.5)
 
