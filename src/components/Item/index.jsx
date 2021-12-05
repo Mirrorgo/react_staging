@@ -8,6 +8,13 @@ export default class Item extends Component {
       // console.log(this.props);
     };
   };
+
+  handleDeleteTodo = (id) => {
+    return (event) => {
+      this.props.deleteTodo(id);
+    };
+  };
+
   render() {
     const { id, name, done } = this.props;
     return (
@@ -20,7 +27,9 @@ export default class Item extends Component {
           />
           <span>{name}</span>
         </label>
-        <button className="btn btn-danger">删除</button>
+        <button className="btn btn-danger" onClick={this.handleDeleteTodo(id)}>
+          删除
+        </button>
       </li>
     );
   }

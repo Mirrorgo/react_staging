@@ -19,9 +19,10 @@ footer:统计item,完成数
 3.回车添加内容为Item ✅
 4.统计完成的数目✅
 5.选定/取消勾选改变item的state✅
-6.全选state
-7.删除item
-8.删除已完成的item
+6.全选state✅STAR
+  ❌想办法把全选的逻辑写在foot中,foot的checkAll和clearAll循环调用App的updateTodo
+7.删除item✅
+8.删除已完成的item✅
  */
 
 export default class App extends Component {
@@ -57,14 +58,40 @@ export default class App extends Component {
     this.setState({ todos: newTodo });
   };
 
+  checkAll = (done) => {
+    const { todos } = this.state;
+    const newTodo = todos.map((todoObj) => {
+      return { ...todoObj, done };
+    });
+    this.setState({ todos: newTodo });
+  };
+
+  deleteAllDone = (params) => {
+    const { todos } = this.state;
+    const newTodo = todos.filter((todoObj) => {
+      if (todoObj.done === false) return todoObj;
+    });
+    this.setState({ todos: newTodo });
+  };
+
   render() {
     const { todos } = this.state;
     return (
       <div className="todo-container">
         <div className="todo-wrap">
           <Header addTodo={this.addTodo}></Header>
-          <List todos={todos} updateTodo={this.updateTodo}></List>
-          <Footer todos={todos}></Footer>
+          <List
+            todos={todos}
+            updateTodo={this.updateTodo}
+            deleteTodo={this.deleteTodo}
+          ></List>
+          <Footer
+            todos={todos}
+            // updateTodo={this.updateTodo}
+            // deleteTodo={this.deleteTodo}
+            checkAll={this.checkAll}
+            deleteAllDone={this.deleteAllDone}
+          ></Footer>
         </div>
       </div>
     );
