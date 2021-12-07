@@ -111,3 +111,18 @@ react脚手架配置代理总结
 说明：
 1. 优点：可以配置多个代理，可以灵活的控制请求是否走代理。
 2. 缺点：配置繁琐，前端请求资源时必须加前缀。
+
+第三方成型的样式库一般在public下单独建一个文件夹css放,然后在index.html中引入
+
+https://juejin.cn/post/6844903809274085389
+
+
+连续解构赋值的写法
+```
+const {
+      keyWordElement: { value },
+    } = this;
+```
+
+等价于
+const {value} = this.keyWordElement

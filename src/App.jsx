@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import MyTest from "./components/MyTest";
-
+import Search from "./components/Search";
+import List from "./components/List";
+import "./App.css";
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <MyTest></MyTest>
+      <div className="container">
+        <Search />
+        <List />
       </div>
     );
   }
