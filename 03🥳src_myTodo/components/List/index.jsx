@@ -15,6 +15,7 @@ export default class List extends Component {
             <Item
               key={todo.id}
               {...todo} //STAR 这里的...todo用来做什么?拆分出所有属性???貌似是的
+              // 👆的{...todo}是用来批量传递属性的！！！很好用
               // handleCheckBox={this.props.handleCheckBox}
               deleteTodo={deleteTodo}
               updateTodo={updateTodo}

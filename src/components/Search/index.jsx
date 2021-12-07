@@ -13,15 +13,27 @@ export default class index extends Component {
     const {
       keyWordElement: { value: keyWord },
     } = this;
+    //发送请求前更新App状态
+    this.props.updateAppState({ isFirst: false, isLoading: true });
+
     console.log(keyWord);
     // 👇这里没有产生跨域问题是因为后端用cors解决了跨域问题
     // axios.get(`http://localhost:3000/api1/search/users?q=${keyWord}`).then(
-    axios.get(`http://api.github.com/search/users?q=${keyWord}`).then(
+    // axios.get(`http://api.github.com/search/users?q=${keyWord}`).then(
+    axios.get(`http://localhost:3000/api1/search/users?q=${keyWord}`).then(
+      // axios.get(`http://localhost:3000/api1/search/users?q=${keyWord}`).then(
       (response) => {
-        console.log("成功", response.data);
+        this.props.updateAppState({
+          isLoading: false,
+          users: response.data.items,
+        });
       },
       (error) => {
-        console.log("失败了", error);
+        // console.log("失败了", error);
+        this.props.updateAppState({
+          isLoading: false,
+          err: error.message,
+        });
       }
     );
   };
