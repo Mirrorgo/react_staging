@@ -18,10 +18,9 @@ export default class index extends Component {
 
     console.log(keyWord);
     // 👇这里没有产生跨域问题是因为后端用cors解决了跨域问题
-    // axios.get(`http://localhost:3000/api1/search/users?q=${keyWord}`).then(
     // axios.get(`http://api.github.com/search/users?q=${keyWord}`).then(
     axios.get(`http://localhost:3000/api1/search/users?q=${keyWord}`).then(
-      // axios.get(`http://localhost:3000/api1/search/users?q=${keyWord}`).then(
+      // axios.get(`http://localhost:3000/api1/search/users2`).then(
       (response) => {
         this.props.updateAppState({
           isLoading: false,
