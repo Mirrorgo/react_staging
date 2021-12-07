@@ -1,26 +1,8 @@
 import React, { Component } from "react";
-import PubSub from "pubsub-js";
 import "./index.css";
 export default class index extends Component {
-  state = {
-    users: [],
-    isFirst: true, //是否为第一次打开页面
-    isLoading: false, //标识是否处在加载中
-    err: "", //存储错误信息
-  };
-
-  componentDidMount() {
-    this.token = PubSub.subscribe("Mirrorgo", (_, stateObj) => {
-      this.setState(stateObj);
-    });
-  }
-
-  componentWillUnmount() {
-    PubSub.unsubscribe(this.token);
-  }
-
   render() {
-    const { users, isFirst, isLoading, err } = this.state;
+    const { users, isFirst, isLoading, err } = this.props;
     return (
       <div className="row">
         {

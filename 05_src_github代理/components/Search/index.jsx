@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PubSub from "pubsub-js";
 import axios from "axios";
 
 export default class index extends Component {
@@ -15,31 +14,25 @@ export default class index extends Component {
       keyWordElement: { value: keyWord },
     } = this;
     //发送请求前更新App状态
-    /* this.props.updateAppState({ isFirst: false, isLoading: true }); */
-    PubSub.publish("Mirrorgo", { isFirst: false, isLoading: true });
+    this.props.updateAppState({ isFirst: false, isLoading: true });
 
-    // console.log(keyWord);
+    console.log(keyWord);
     // 👇这里没有产生跨域问题是因为后端用cors解决了跨域问题
     // axios.get(`http://api.github.com/search/users?q=${keyWord}`).then(
     axios.get(`http://localhost:3000/api1/search/users?q=${keyWord}`).then(
       // axios.get(`http://localhost:3000/api1/search/users2`).then(
       (response) => {
-        /* this.props.updateAppState({
-          isLoading: false,
-          users: response.data.items,
-        }); */
-        PubSub.publish("Mirrorgo", {
+        this.props.updateAppState({
           isLoading: false,
           users: response.data.items,
         });
       },
       (error) => {
         // console.log("失败了", error);
-        /*   this.props.updateAppState({
+        this.props.updateAppState({
           isLoading: false,
           err: error.message,
-        }); */
-        PubSub.publish("Mirrorgo", { isLoading: false, err: error.message });
+        });
       }
     );
   };

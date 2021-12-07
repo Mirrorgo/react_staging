@@ -130,3 +130,22 @@ const {value} = this.keyWordElement
 
 
 有时候localhost失效好像是wsl的问题（占用端口的进程实际上没有关掉），重启wsl就好了
+
+# 消息订阅模式
+消息订阅的库:PubSub    github上可找到
+```
+yarn add pubsub-js
+```
+
+
+xhr   XMLHttpRequest()
+
+
+jQuery和axios都是对xhr的封装
+jQuery容易形成回调地狱，axios是promise风格的
+
+
+fetch和xhr是并列的
+fetch是自带的，而且本身也是promise风格
+[关于fetch](https://www.bilibili.com/video/BV1wy4y1D7JT?p=72&spm_id_from=pageDriver)
+fetch不错，但对于部分老版本浏览器不兼容
