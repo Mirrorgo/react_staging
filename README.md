@@ -149,3 +149,20 @@ fetch和xhr是并列的
 fetch是自带的，而且本身也是promise风格
 [关于fetch](https://www.bilibili.com/video/BV1wy4y1D7JT?p=72&spm_id_from=pageDriver)
 fetch不错，但对于部分老版本浏览器不兼容
+
+# React路由
+SPA（Single page web application） 单页应用
+* 整个应用只有一个完整页面
+* 通过ajax获取数据，前端异步实现
+* 点击链接不会刷新页面，仅作局部更新
+
+前端路由
+* 浏览器路由，key是path,value是component,用于展示页面内容
+* 注册路由：<Route path="/test" component={Test}> 
+* 工作过程:当浏览器的path变成/test时,当前路由组件就会变为Test组件
+
+
+浏览器的历史记录是一个栈的结构
+操作history的两种方式
+* 方法一,直接使用h5推出的history上的API(老浏览器可能不支持)
+* 方法二,使用hash值(锚点),(也就是#页面内跳转的那个东西)
