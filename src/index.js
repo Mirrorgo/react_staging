@@ -4,5 +4,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 // 引入App
 import App from "./App";
+// 这种方式可以一劳永逸的把al内容放入BrowserRouter
+import { BrowserRouter } from "react-router-dom";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("root")
+);

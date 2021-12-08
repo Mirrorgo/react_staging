@@ -129,7 +129,7 @@ const {value} = this.keyWordElement
 
 
 
-有时候localhost失效好像是wsl的问题（占用端口的进程实际上没有关掉），重启wsl就好了
+
 
 # 消息订阅模式
 消息订阅的库:PubSub    github上可找到
@@ -166,3 +166,10 @@ SPA（Single page web application） 单页应用
 操作history的两种方式
 * 方法一,直接使用h5推出的history上的API(老浏览器可能不支持)
 * 方法二,使用hash值(锚点),(也就是#页面内跳转的那个东西)
+
+react-router有三种,包括针对web的,针对react native的,通用的
+这里学的是针对web的,比通用的更简单.也可以叫react-router-dom
+
+使用react-router-dom `yarn add react-router-dom`
+
+
