@@ -1,11 +1,22 @@
 import React, { Component } from "react";
+import { Button, Calendar } from "antd";
+import { GithubOutlined, GitlabOutlined } from "@ant-design/icons";
+// import { GithubOutlined } from "@ant-design/icon";
+import "antd/dist/antd.css";
 
 export default class App extends Component {
   render() {
+    function onPanelChange(value, mode) {
+      console.log(value.format("YYYY-MM-DD"), mode);
+    }
     return (
       <div>
         App...
-        <button>点击</button>
+        <Button type="primary">点击</Button>
+        <Button type="link">点击</Button>
+        <GithubOutlined />
+        <GitlabOutlined />
+        <Calendar onPanelChange={onPanelChange} />
       </div>
     );
   }
