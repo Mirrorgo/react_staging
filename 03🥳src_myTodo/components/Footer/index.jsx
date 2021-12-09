@@ -5,7 +5,7 @@ export default class index extends Component {
   /* checkAll = (done) => {
     const { todos ,updateTodo} = this.props;
     // return console.log(todos[0]);
-    return todos.map((params) => {
+    return todos.map((params) => { 👈   ⭐⭐⭐⭐⭐
       // 貌似不太适合
     })
   }; */

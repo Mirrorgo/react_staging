@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Button, Calendar } from "antd";
 import { GithubOutlined, GitlabOutlined } from "@ant-design/icons";
-// import { GithubOutlined } from "@ant-design/icon";
-import "antd/dist/antd.css";
+import './App.less'
 
 export default class App extends Component {
   render() {
